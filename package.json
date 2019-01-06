@@ -1,0 +1,27 @@
+{
+  "name": "nodoka",
+  "version": "2.0.0",
+  "description": "",
+  "scripts": {
+    "theme": "theme watch",
+    "build": "parcel build ./scripts/index.tsx -d ./assets",
+    "scripts": "parcel serve ./scripts/index.tsx -d ./assets --https --port=8081 --hmr-hostname=localhost"
+  },
+  "keywords": [],
+  "author": "Phillip Malboeuf <phil@phils.computer>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.4.16",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-router-dom": "^4.3.1",
+    "cssnano": "^4.1.4",
+    "node-sass": "^4.9.3",
+    "typescript": "^3.1.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1"
+  }
+}
