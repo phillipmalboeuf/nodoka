@@ -6,7 +6,8 @@
 // #BODY
 
 html {
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  padding-bottom: 0 !important;
 
   &.noscroll {
     overflow: hidden;
@@ -17,26 +18,6 @@ body {
   
 }
 
-header,
-footer {
-  position: fixed;
-  padding: $rythm;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  // pointer-events: none;
-
-  // a, button, .overlay {
-  //   pointer-events: auto;
-  // }
-}
-
-footer {
-  top: auto;
-  bottom: 0;
-}
-
 #preview-bar-iframe {
   display: none;
 }
@@ -45,11 +26,8 @@ footer {
 // #MAIN
 
 main {
-  width: 100vw;
-  min-height: 100vh;
-  padding: $rythm*2;
-  max-width: 966px;
-  overflow-y: hidden;
+  min-height: 66vh;
+  padding: $rythm*6 $rythm*2 $rythm*2;
 
   @media #{$tablet_portrait} {
     padding: $rythm;
@@ -61,8 +39,8 @@ main {
 
 .max_width {
   max-width: $max_width;
-  margin-right: auto;
-  margin-left: auto;
+  // margin-right: auto;
+  // margin-left: auto;
 }
 
 .padded {

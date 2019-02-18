@@ -40,6 +40,8 @@
     {{ content_for_layout }}
   </main>
 
+  {% section 'footer' %}
+
   {% comment %} <script src="{{ 'index.js' | asset_url }}" defer="defer"></script> {% endcomment %}
   <script src="https://localhost:8081/index.js" defer></script>
 </body>

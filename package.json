@@ -5,7 +5,7 @@
   "scripts": {
     "theme": "theme watch",
     "build": "parcel build ./scripts/index.tsx -d ./assets",
-    "scripts": "parcel serve ./scripts/index.tsx -d ./assets --https --port=8081 --hmr-hostname=localhost"
+    "scripts": "open https://www.nodokatea.com/?preview_theme_id=37613469798 && parcel serve ./scripts/index.tsx -d ./assets --https --port=8081 --hmr-hostname=localhost"
   },
   "keywords": [],
   "author": "Phillip Malboeuf <phil@phils.computer>",
@@ -22,6 +22,7 @@
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "turbolinks": "^5.2.0"
   }
 }

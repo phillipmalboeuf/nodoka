@@ -12,7 +12,7 @@ $grey--dark: #9B9B9B;
 $yellow: #FFF0B0;
 $blue: #739EFF;
 $red: #FC7575;
-$green: #50E3C2;
+$green: #73AE74;
 
 // #FONTS
 
@@ -23,17 +23,17 @@ $alternate_font: $body_font;
 
 // #LAYOUT
 
-$base: 22;
+$base: 16;
 $base_size: $base * 1px;
-$massive_size: (80/$base) * 1rem;
+$massive_size: (74/$base) * 1rem;
 $giant_size: (64/$base) * 1rem;
-$big_size: (42/$base) * 1rem;
+$big_size: (40/$base) * 1rem;
 $medium_size: (32/$base) * 1rem;
 $slight_size: (28/$base) * 1rem;
-$small_size: (18/$base) * 1rem;
-$rythm: 1.66rem;
-$max_width: 1333px;
-$border_radius: 3px;
+$small_size: (14/$base) * 1rem;
+$rythm: 1.5rem;
+$max_width: 42em;
+$border_radius: 1px;
 $letter_spacing: 0.1em;
 
 $number_of_columns: 12;
