@@ -16,7 +16,7 @@
     
   <div class="grid grid--guttered grid--middle">
     <div class="col"><h3>{% include 'product-price', variant: product %}</h3></div>
-    <div class="col"><button class="button--transparent">Add to cart ↗</button></div>
+    <div class="col" data-add-to-cart data-product='{{ product.selected_or_first_available_variant.id }}'></div>
   </div>
 </article>
 

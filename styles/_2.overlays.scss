@@ -14,6 +14,17 @@
   height: 100vh;
   overflow-y: auto;
   z-index: 400;
+
+  &.overlay--cart {
+    font-size: $small_size;
+    left: auto;
+    top: $rythm*2.5;
+    right: $rythm;
+    height: auto;
+    width: 90vw;
+    max-width: 330px;
+    max-height: 90vh;
+  }
 }
 
   button.overlay__back {
@@ -38,20 +49,25 @@
 
   .overlay__container {
     @extend .padded;
+    @extend .padded--tight;
     position: relative;
 
     width: 100%;
-    max-width: $max_width/3;
+    max-width: $max_width/2;
     max-height: 90vh;
     overflow-y: auto;
 
-    border: none;
+    border: 1px solid $grey;
     border-radius: $border_radius;
     background-color: $white;
     box-shadow: 0 2px 4px fade-out($black, 0.9);
 
     &.overlay__container--wider {
       max-width: $max_width/2;
+    }
+
+    .overlay--cart & {
+      max-width: none;
     }
   }
 

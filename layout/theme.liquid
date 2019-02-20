@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.color_button }}">
+  <meta name="turbolinks-cache-control" content="no-cache">
   <link rel="canonical" href="{{ canonical_url }}">
 
   {% comment %} {% if settings.favicon != blank %}
@@ -30,19 +31,20 @@
   <link rel="stylesheet" href="https://localhost:8081/index.css">
 
   {{ content_for_header }}
+
+  {% comment %} <script src="{{ 'index.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+  <script src="https://localhost:8081/index.js" defer></script>
 </head>
 
 <body>
 
   {% section 'header' %}
 
+  <div id="scripts"></div>
   <main role="main">
     {{ content_for_layout }}
   </main>
 
   {% section 'footer' %}
-
-  {% comment %} <script src="{{ 'index.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-  <script src="https://localhost:8081/index.js" defer></script>
 </body>
 </html>

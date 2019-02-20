@@ -10,8 +10,11 @@
     <a href="/"><h1>{% include 'svg-logo' %}</h1></a>
     <div class="col col--4of12 grid grid--guttered grid--right">
       <div class="col"><a href="/" class="header__link header__link--focus">EN</a> / <a href="/" class="nav__link">JP</a></div>
-      <div class="col"><a href="/cart" class="header__link{% if cart.item_count > 0 %} header__link--focus{% endif %}">Your Cart ({{ cart.total_price | money }})</a></div>
+      <div class="col" id="cart" data-cart='{{ cart | json }}' data-turbolinks-permanent>
+        {% comment %} <a href="/cart" class="header__link{% if cart.item_count > 0 %} header__link--focus{% endif %}">Your Cart ({{ cart.total_price | money }})</a> {% endcomment %}
+      </div>
     </div>
+    
   </header>
 </div>
 

@@ -9,6 +9,7 @@ header {
   width: 100%;
   z-index: 10;
   pointer-events: none;
+  background: fade-out($white, 0.05);
 
   a, button, .overlay {
     pointer-events: auto;
