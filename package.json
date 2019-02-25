@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "theme": "theme watch",
-    "build": "parcel build ./scripts/index.tsx -d ./assets",
-    "scripts": "open https://www.nodokatea.com/?preview_theme_id=37613469798 && parcel serve ./scripts/index.tsx -d ./assets --https --port=8081 --hmr-hostname=localhost"
+    "build": "parcel build ./scripts/app.tsx -d ./assets",
+    "scripts": "open https://www.nodokatea.com/?preview_theme_id=37613469798 && parcel serve ./scripts/app.tsx -d ./assets --https --port=8081 --hmr-hostname=localhost"
   },
   "keywords": [],
   "author": "Phillip Malboeuf <phil@phils.computer>",
