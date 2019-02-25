@@ -7,6 +7,7 @@ label {
 
   font-size: $small_size;
   font-weight: bold;
+  text-transform: uppercase;
 
   margin: 0 0 ($rythm/4);
 }
@@ -34,13 +35,14 @@ textarea,
   font-size: $base_size;
   font-weight: normal;
   line-height: $rythm;
+  text-align: center;
 
   color: inherit;
   background: transparent;
-  padding: $rythm/3 $rythm/1.5;
+  padding: $rythm/2.5 $rythm/1.5;
   margin-bottom: $rythm;
-  border: 2px solid $grey--light;
-  border-radius: $border_radius*2;
+  border: 1px solid $grey;
+  border-radius: $border_radius;
   // box-shadow: 0 1px 6px fade-out($black, 0.9);
 
   .col > &:last-child {
@@ -67,6 +69,10 @@ textarea,
   &:focus {
     color: $black--dark;
     border-color: $black;
+  }
+
+  &.input--medium {
+    font-size: $medium_size;
   }
 
   &.input--transparent {
@@ -121,14 +127,14 @@ select {
   }
 }
 
-select[name='currency'] {
-  border: 0;
-  width: $rythm*4;
+// select[name='currency'] {
+//   border: 0;
+//   width: $rythm*4;
 
-  & + .icon {
-    margin-top: (-$rythm*2.666);
-  }
-}
+//   & + .icon {
+//     margin-top: (-$rythm*2.666);
+//   }
+// }
 
 input[type="search"] {
   box-sizing: border-box;

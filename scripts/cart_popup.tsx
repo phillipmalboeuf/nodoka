@@ -5,6 +5,7 @@ import { CartContext } from './contexts/cart'
 
 import { money } from './helpers/formatters'
 import { Overlay } from './overlay'
+import { Picture } from './picture'
 
 
 interface Props {}
@@ -31,14 +32,15 @@ export class CartPopup extends Overlay {
             {/* <button className='button--transparent overlay__close' onClick={()=> this.hide()}>✕</button> */}
             <div className='grid grid--tight_guttered'>
               {this.context.cart.state.items && this.context.cart.state.items.map(item => <React.Fragment key={item.key}>
+                {console.log(item)}
                 <div className='col col--2of12'>
-                  <a href={item.url}><img src={item.image} alt={item.title} /></a>
+                  <a href={item.url}><Picture src={item.image} alt={item.title} small /></a>
                 </div>
                 <div className='col col--7of12'>
                   {item.quantity}x <strong>{item.title}</strong>
                 </div>
                 <div className='col col--2of12'>
-                  {money(item.price)}
+                  {money(item.line_price)}
                 </div>
                 <div className='col col--1of12 text_right'>
                   <button className='button--transparent' onClick={e => this.context.remove(item.key)}>✕</button>

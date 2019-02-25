@@ -40,12 +40,19 @@
     <div class="col {{ product_description_width }}">
       <div class="product__content">
         <h3>{% include 'product-price' %}</h3>
-        {{ product.description }}
+        {%- assign description_paragraphs = product.description | split: '<p>~</p>' -%}
+        {{ description_paragraphs[0] }}
 
-        <div class="grid grid--guttered">
-
-          <div class="col col--8of12" id="add_to_cart" data-product='{{ current_variant.id }}'></div>
+        <div id="add_to_cart" data-product='{{ current_variant.id }}' data-with-quantity>
         </div>
+
+        <hr>
+
+        {%- for paragraph in description_paragraphs -%}
+        {%- unless forloop.first -%}
+        {{ paragraph }}
+        {%- endunless -%}
+        {%- endfor -%}
         
       </div>
     </div>

@@ -37,8 +37,8 @@ export class App extends React.Component<Props, State> {
   componentDidMount() {
   }
 
-  addToCartElement(element: Element) {
-    return ReactDOM.createPortal(<AddToCart id={element.getAttribute('data-product')} />, element)
+  addToCartElement(element: Element, quantity?: boolean) {
+    return ReactDOM.createPortal(<AddToCart id={element.getAttribute('data-product')} quantity={quantity} />, element)
   }
 
   render() {
@@ -59,9 +59,9 @@ export class App extends React.Component<Props, State> {
         {ReactDOM.createPortal(<CartPopup ref={popup => this.popup = popup} />, document.getElementById('cart'))}
 
         <Route exact path='/products/:product'
-          render={()=> this.addToCartElement(document.getElementById('add_to_cart'))} />
+          render={()=> this.addToCartElement(document.getElementById('add_to_cart'), true)} />
         <Route exact path='/collections/:collection/products/:product'
-          render={()=> this.addToCartElement(document.getElementById('add_to_cart'))} />
+          render={()=> this.addToCartElement(document.getElementById('add_to_cart'), true)} />
         <Route exact path='/'
           render={()=> Array.from(document.querySelectorAll('[data-add-to-cart]')).map(element => this.addToCartElement(element))} />
         <Route exact path='/collections/:collection'

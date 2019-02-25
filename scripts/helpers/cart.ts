@@ -11,6 +11,7 @@ interface CartState {
 		price: number,
 		discounted_price: number,
 		original_price: number,
+		line_price: number,
 		image: string
 	}[],
 	total_price: number
