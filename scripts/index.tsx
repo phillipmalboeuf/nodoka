@@ -62,6 +62,8 @@ export class App extends React.Component<Props, State> {
           render={()=> this.addToCartElement(document.getElementById('add_to_cart'))} />
         <Route exact path='/collections/:collection/products/:product'
           render={()=> this.addToCartElement(document.getElementById('add_to_cart'))} />
+        <Route exact path='/'
+          render={()=> Array.from(document.querySelectorAll('[data-add-to-cart]')).map(element => this.addToCartElement(element))} />
         <Route exact path='/collections/:collection'
           render={()=> Array.from(document.querySelectorAll('[data-add-to-cart]')).map(element => this.addToCartElement(element))} />
 

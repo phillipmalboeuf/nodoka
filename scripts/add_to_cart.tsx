@@ -14,6 +14,6 @@ export class AddToCart extends React.Component<Props, State> {
   context!: React.ContextType<typeof CartContext>
 
   render() {
-    return <button className='button--transparent' onClick={e => this.context.add(this.props.id, 1)}>Add to cart ↗</button>
+    return <button className='button--transparent slight' onClick={e => this.context.add(this.props.id, 1)}>Add to cart ↗</button>
   }
 }

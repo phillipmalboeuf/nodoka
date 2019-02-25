@@ -1,5 +1,28 @@
-<div class="page-width">
-  {% if section.settings.title != blank %}
+<div class="padded bordered medium_top big_bottom">
+  <div class="grid grid--middle grid--center">
+    {% for block in section.blocks %}
+    <div class="col col--6of12 col--tablet_portrait--9of12 col--phone--12of12 text_{{ block.settings.align_text }} padded">
+      {% if block.settings.image != blank %}
+      {% include 'picture', image: block.settings.image %}
+      {% endif %}
+
+      {% if block.settings.title != blank %}
+      <h2>{{ block.settings.title }}</h2>
+      {% endif %}
+      {% if block.settings.text != blank %}
+      <div class="slight medium_bottom">{{ block.settings.text }}</div>
+      {% endif %}
+      {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+      <a href="{{ block.settings.button_link }}" class="button button--transparent slight">
+      {{ block.settings.button_label }}
+      </a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+  {% comment %} {% if section.settings.title != blank %}
     <div class="section-header text-center">
       <h2>{{ section.settings.title | escape }}</h2>
     </div>
@@ -69,13 +92,7 @@
         {% endif %}
       </div>
     {% endfor %}
-  </div>
-
-  {% if section.blocks.size == 0 %}
-    {% include 'no-blocks' %}
-  {% endif %}
-</div>
-
+  </div> {% endcomment %}
 
 
 {% schema %}
@@ -91,68 +108,7 @@
   },
   "class": "index-section",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": {
-        "de": "Titel",
-        "en": "Heading",
-        "es": "Título",
-        "fr": "En-tête",
-        "it": "Heading",
-        "ja": "見出し",
-        "pt-BR": "Título"
-      },
-      "default": {
-        "de": "Textspalten mit Fotos",
-        "en": "Text columns with images",
-        "es": "Col. de texto con imagen",
-        "fr": "Colonnes de texte avec images",
-        "it": "Colonne di testo con foto",
-        "ja": "画像付きテキスト列",
-        "pt-BR": "Colunas de texto com imagens"
-      }
-    },
-    {
-      "type": "select",
-      "id": "align_text",
-      "label": {
-        "de": "Textausrichtung",
-        "en": "Text alignment",
-        "es": "Alineación de texto",
-        "fr": "Alignement du texte",
-        "it": "Allineamento del testo",
-        "ja": "テキストアラインメント",
-        "pt-BR": "Alinhamento de texto"
-      },
-      "default": "left",
-      "options": [
-        {
-          "value": "left",
-          "label": {
-            "de": "Links",
-            "en": "Left",
-            "es": "Izquierda",
-            "fr": "Gauche",
-            "it": "Sinistra",
-            "ja": "左",
-            "pt-BR": "Esquerda"
-          }
-        },
-        {
-          "value": "center",
-          "label": {
-            "de": "Mittig",
-            "en": "Centered",
-            "es": "Centrado",
-            "fr": "Centré",
-            "it": "Centrato",
-            "ja": "中央揃え",
-            "pt-BR": "Centralizado"
-          }
-        }
-      ]
-    }
+    
   ],
   "blocks": [
     {
@@ -168,20 +124,6 @@
       },
       "settings": [
         {
-          "type": "checkbox",
-          "id": "enable_image",
-          "label": {
-            "de": "Foto anzeigen",
-            "en": "Show image",
-            "es": "Mostrar imagen",
-            "fr": "Afficher l'image",
-            "it": "Mostra immagine",
-            "ja": "画像を表示する",
-            "pt-BR": "Exibir imagem"
-          },
-          "default": true
-        },
-        {
           "type": "image_picker",
           "id": "image",
           "label": {
@@ -193,6 +135,46 @@
             "ja": "画像",
             "pt-BR": "Imagem"
           }
+        },
+        {
+          "type": "select",
+          "id": "align_text",
+          "label": {
+            "de": "Textausrichtung",
+            "en": "Text alignment",
+            "es": "Alineación de texto",
+            "fr": "Alignement du texte",
+            "it": "Allineamento del testo",
+            "ja": "テキストアラインメント",
+            "pt-BR": "Alinhamento de texto"
+          },
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": {
+                "de": "Links",
+                "en": "Left",
+                "es": "Izquierda",
+                "fr": "Gauche",
+                "it": "Sinistra",
+                "ja": "左",
+                "pt-BR": "Esquerda"
+              }
+            },
+            {
+              "value": "center",
+              "label": {
+                "de": "Mittig",
+                "en": "Centered",
+                "es": "Centrado",
+                "fr": "Centré",
+                "it": "Centrato",
+                "ja": "中央揃え",
+                "pt-BR": "Centralizado"
+              }
+            }
+          ]
         },
         {
           "type": "text",
@@ -288,9 +270,6 @@
         "pt-BR": "Texto"
       },
       "blocks": [
-        {
-          "type": "text_block"
-        },
         {
           "type": "text_block"
         },

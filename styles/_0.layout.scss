@@ -39,8 +39,15 @@ main {
 
 .max_width {
   max-width: $max_width;
-  // margin-right: auto;
-  // margin-left: auto;
+
+  &.max_width--wide {
+    max-width: $max_width*2;
+  }
+
+  &.max_width--center {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .padded {

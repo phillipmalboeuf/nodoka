@@ -1,34 +1,29 @@
-<div class="product-card product-card--list">
-  <a class="full-width-link" href="{{ product.url | within: collection }}">
-    <span class="visually-hidden">{{ product.title }}</span>
-  </a>
 
-  <div class="list-view-item__link">
-    <div class="list-view-item__image-column">
-      <div class="list-view-item__image-wrapper product-card__image-wrapper">
-        <img class="list-view-item__image" src="{{ product.featured_image.src | img_url: '95x95', scale: 2 }}" alt="">
-      </div>
+<article class="product">
+  <div class="grid grid--guttered grid--middle">
+    <div class="col col--6of12">
+      <a href="{{ product.url | within: collection }}">
+        <div class="product__images">
+          {% for image in product.images limit: 1 %}
+          {% include 'picture', image: image %}
+          {% endfor %}
+        </div>
+      </a>
     </div>
 
-    <div class="list-view-item__title-column">
-      <div class="list-view-item__title" aria-hidden="true">
-        <span class="product-card__title">{{ product.title }}</span>
-      </div>
-      {% if product.compare_at_price > product.price %}
-        <div class="list-view-item__on-sale">{{ 'products.product.on_sale' | t }}</div>
-      {% endif %}
-      {% if section.settings.show_vendor %}
-        <div class="list-view-item__vendor medium-up--hide">{{ product.vendor }}</div>
-      {% endif %}
-      {% unless product.available %}
-        <div class="list-view-item__sold-out">{{ 'products.product.sold_out' | t }}</div>
-      {% endunless %}
-    </div>
+    <div class="col col--6of12">
+      <a href="{{ product.url | within: collection }}">    
+        <h2>{{ product.title }} <small>{% for variant in product.variants %}{{ variant.weight | weight_with_unit }}{% unless forloop.last %} – {% endunless %}{% endfor %}</small></h2>
+      </a>
 
-    <div class="list-view-item__price-column">
-      {% if product.available %}
-        {% include 'product-price', variant: product %}
-      {% endif %}
+      <div class="product__description max_width">
+        {{ product.description }}
+      </div>
+        
+      <div class="grid grid--guttered grid--middle">
+        <div class="col"><h3>{% include 'product-price', variant: product %}</h3></div>
+        <div class="col" data-add-to-cart data-product='{{ product.selected_or_first_available_variant.id }}'></div>
+      </div>
     </div>
   </div>
-</div>
+</article>

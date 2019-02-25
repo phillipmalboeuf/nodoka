@@ -76,7 +76,7 @@ h1 {
 
 h2 {
   font-size: $big_size;
-  line-height: $rythm*3.5;
+  line-height: $rythm*2;
   font-weight: normal;
 
   &.h2--giant {
@@ -288,9 +288,10 @@ small,
   font-size: $small_size;
 }
 
-.slight {
+.slight,
+a.slight {
   font-size: $slight_size;
-  line-height: $rythm*1.66;
+  line-height: $rythm*1.33;
 }
 
 .medium {
@@ -335,7 +336,7 @@ em,
 }
 
 .rounded { border-radius: $border_radius; }
-.bordered { border-radius: $border_radius; border: 1px solid $grey--light; }
+.bordered { border-radius: $border_radius; border: 1px solid $black; }
 .shadowed { box-shadow: 0 0 $base_size/2 fade-out($black, 0.9); }
 
 

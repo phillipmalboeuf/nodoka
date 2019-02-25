@@ -8,7 +8,7 @@ button {
   color: $white;
   text-decoration: none;
   font-size: $base_size;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
 
   -webkit-font-smoothing: antialiased;
@@ -85,7 +85,6 @@ button {
 
   &.button--transparent {
     color: inherit;
-    font-weight: normal;
     background: transparent;
     box-shadow: none;
     border: none;
