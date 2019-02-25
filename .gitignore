@@ -3,8 +3,8 @@ _ignore
 node_modules
 .cache
 
-assets/index.css
-assets/index.js
-assets/index.map
+assets/app.css
+assets/app.js
+assets/app.map
 
 config.yml
