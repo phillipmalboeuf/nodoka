@@ -1,23 +1,32 @@
-<div class="section-header text-center">
-  <h1 class="article__title">{{ article.title }}</h1>
+<div class="text_center max_width max_width--center">
+  <h1 class="h1--massive">{{ article.title }}</h1>
+
   {% if section.settings.blog_show_author %}
-    <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+    <strong>{{ 'blogs.article.by_author' | t: author: article.author }}</strong>
   {% endif %}
 
   {% if section.settings.blog_show_date %}
-    <span class="article__date">
-      {{ article.published_at | time_tag: format: 'month_day_year' }}
-    </span>
+    <em>{{ article.published_at | time_tag: format: 'month_day_year' }}</em>
   {% endif %}
 </div>
 
-<div class="rte">
+<div class="padded medium_top medium_bottom full_images">
+  {% if article.image %}
+  {% include 'picture', image: article.image, crop: 0.42 %}
+  {% endif %}
+</div>
+
+<div class="max_width max_width--center">
   {{ article.content }}
 </div>
 
 {% if section.settings.show_share_buttons %}
   {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
 {% endif %}
+
+<div class="padded medium_top">
+  <h2 class="text_center"><a href="{{ blog.url }}">More {{ blog.title }} ↓</a></h2>
+</div>
 
 
 
@@ -45,7 +54,7 @@
         "ja": "執筆者を表示する",
         "pt-BR": "Exibir autor(a)"
       },
-      "default": true
+      "default": false
     },
     {
       "type": "checkbox",
@@ -59,7 +68,7 @@
         "ja": "日付を表示する",
         "pt-BR": "Exibir data"
       },
-      "default": true
+      "default": false
     },
     {
       "type": "checkbox",
@@ -73,7 +82,7 @@
         "ja": "ソーシャル共有ボタンを表示する",
         "pt-BR": "Exibir botões de compartilhamento em redes sociais"
       },
-      "default": true
+      "default": false
     }
   ]
 }

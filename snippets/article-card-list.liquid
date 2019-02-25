@@ -1,0 +1,47 @@
+
+<article class="article grid grid--guttered grid--middle">
+  <div class="col col--3of12">
+    <a href="{{ article.url }}">
+      <div>
+        {% if article.image %}
+        {% include 'picture', image: article.image %}
+        {% endif %}
+      </div>
+    </a>
+  </div>
+
+  <div class="col col--5of12">
+    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+
+    {% if section.settings.blog_show_author %}
+    <div><strong>{{ 'blogs.article.by_author' | t: author: article.author }}</strong></div>
+    {% endif %}
+
+    {% if section.settings.blog_show_date %}
+    <div><em>{{ article.published_at | time_tag: format: 'month_day_year' }}</em></div>
+    {% endif %}
+
+    <div class="max_width">
+      <p>
+      {% if article.excerpt.size > 0 %}
+        {{ article.excerpt }}
+      {% else %}
+        {{ article.content | strip_html | truncate: 150 }}
+      {% endif %}
+      </p>
+
+    <a href="{{ article.url }}" class="button button--transparent slight" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+      {{ 'blogs.article.read_more' | t }} ↗
+    </a>
+  </div>
+
+  <div class="col col--4of12">
+  {% if article.tags.size > 0 %}
+    <div class="tags" aria-label="{{ 'blogs.article.tags' | t }}">
+    {% for tag in article.tags %}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+    </div>
+  {% endif %}
+  </div>
+</article>

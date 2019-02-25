@@ -1,6 +1,6 @@
 <picture>
-  <source srcset="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=600" media="(max-width: 600px)">
-  <source srcset="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=900" media="(max-width: 900px)">
-  <source srcset="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=1200" media="(max-width: 1200px)">
-  <img src="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=1400" alt="{{image.alt}}" class="{{class}}">
+  <source srcset="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=600{% if crop %}&h={{ crop | times: 600 }}&fit=crop&crop=edges{% endif %}" media="(max-width: 600px)">
+  <source srcset="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=900{% if crop %}&h={{ crop | times: 900 }}&fit=crop&crop=edges{% endif %}" media="(max-width: 900px)">
+  <source srcset="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=1200{% if crop %}&h={{ crop | times: 1200 }}&fit=crop&crop=edges{% endif %}" media="(max-width: 1200px)">
+  <img src="{{image.src|img_url: 'master'|replace: '//cdn.shopify.com', 'https://easylover.imgix.net'}}&auto=format,compress&w=1400{% if crop %}&h={{ crop | times: 1400 }}&fit=crop&crop=edges{% endif %}" alt="{{image.alt}}" class="{{class}}">
 </picture>

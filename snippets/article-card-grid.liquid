@@ -1,0 +1,40 @@
+
+<article class="article medium_bottom">
+  <a href="{{ article.url }}">
+    <div class="medium_bottom">
+      {% if article.image %}
+      {% include 'picture', image: article.image %}
+      {% endif %}
+    </div>
+  </a>
+
+  <h2 class="small_bottom"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+
+  {% if section.settings.blog_show_author %}
+  <div><strong>{{ 'blogs.article.by_author' | t: author: article.author }}</strong></div>
+  {% endif %}
+
+  {% if section.settings.blog_show_date %}
+  <div><em>{{ article.published_at | time_tag: format: 'month_day_year' }}</em></div>
+  {% endif %}
+
+  <div class="max_width">
+  {% if article.excerpt.size > 0 %}
+    {{ article.excerpt }}
+  {% else %}
+    {{ article.content | strip_html | truncate: 150 }}
+  {% endif %}
+
+  {% if article.tags.size > 0 %}
+    <div class="tags" aria-label="{{ 'blogs.article.tags' | t }}">
+    {% for tag in article.tags %}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+    </div>
+  {% endif %}
+
+    <a href="{{ article.url }}" class="button button--transparent slight" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+      {{ 'blogs.article.read_more' | t }} ↗
+    </a>
+  </div>
+</article>
