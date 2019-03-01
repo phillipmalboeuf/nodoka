@@ -41,7 +41,6 @@ export class CartPopup extends Overlay {
             {/* <button className='button--transparent overlay__close' onClick={()=> this.hide()}>✕</button> */}
             <div className='grid grid--tight_guttered'>
               {this.context.cart.state.items && this.context.cart.state.items.map(item => <React.Fragment key={item.key}>
-                {console.log(item)}
                 <div className='col col--2of12'>
                   <a href={item.url}><Picture src={item.image} alt={item.title} small /></a>
                 </div>

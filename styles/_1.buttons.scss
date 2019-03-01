@@ -1,5 +1,6 @@
-.button,
-button {
+
+button,
+.button {
   outline: none;
   cursor: pointer;
   position: relative;
@@ -17,7 +18,7 @@ button {
   background: $black;
   padding: $rythm/3 $rythm;
   line-height: $rythm;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: $border_radius;
   // box-shadow: 0 2px 4px fade-out($black, 0.6);
 
@@ -27,9 +28,10 @@ button {
 
   &:hover,
   &:focus {
-    color: $white;
-    background: $black--light;
+    color: $black;
+    background: $white;
     text-decoration: none;
+    border: 1px solid;
   }
 
   &:active {
@@ -46,14 +48,15 @@ button {
     }
   }
 
-  &.button--grey {
-    color: $grey;
-    background: $grey--light;
+  &.button--white {
+    color: $black;
+    background: $white;
+    border: 1px solid;
 
     &:hover,
     &:focus {
       color: $white;
-      background: $black;
+      background: $black--light;
     }
   }
 
@@ -61,26 +64,6 @@ button {
     font-size: $medium_size;
     padding: $rythm*2 $rythm*4;
     border-radius: $border_radius*2;
-  }
-
-  &.button--outline {
-    color: inherit;
-    font-weight: normal;
-    background: transparent;
-    box-shadow: none;
-    border: 1px solid transparent;
-
-
-    &.button--outline--active {
-      font-weight: bold;
-      border: 1px solid;
-    }
-
-    &:hover,
-    &:focus {
-      color: $white;
-      background: $black--dark;
-    }
   }
 
   &.button--transparent {

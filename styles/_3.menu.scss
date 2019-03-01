@@ -20,6 +20,11 @@
   }
 }
 
+  @keyframes sweep {
+    0%    { transform: translateY(-100%) }
+    100%  { transform: translateY(0%) }
+  }
+
   .menu__container {
     position: absolute;
     z-index: 30;
@@ -30,12 +35,8 @@
     padding: 20vh 0;
     background: $black;
 
-    transition: transform $slow;
-    transform: translateY(-100%);
-
     [open] & {
-      transition: transform $slow;
-      transform: translateY(0);
+      animation: sweep $slow ease-in-out;
     }
 
     @media #{$phone} {

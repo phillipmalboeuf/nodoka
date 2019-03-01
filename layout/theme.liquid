@@ -27,13 +27,13 @@
   </style> {% endcomment %}
 
   <link rel="stylesheet" href="https://rsms.me/inter/inter-ui.css">
-  {% comment %} {{ 'app.css' | asset_url | stylesheet_tag }} {% endcomment %}
-  <link rel="stylesheet" href="https://localhost:8081/app.css">
+  {{ 'app.css' | asset_url | stylesheet_tag }}
+  {% comment %} <link rel="stylesheet" href="https://localhost:8081/app.css"> {% endcomment %}
 
   {{ content_for_header }}
 
-  {% comment %} <script src="{{ 'app.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-  <script src="https://localhost:8081/app.js" defer></script>
+  <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
+  {% comment %} <script src="https://localhost:8081/app.js" defer></script> {% endcomment %}
 </head>
 
 <body>
