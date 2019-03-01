@@ -6,7 +6,6 @@ import '../styles/styles'
 import * as ReactDOM from 'react-dom'
 import * as React from 'react'
 import { BrowserRouter, Route, StaticRouter, RouteComponentProps } from 'react-router-dom'
-import * as Turbolinks from 'turbolinks'
 
 import { CartContext } from './contexts/cart'
 import { Cart } from './helpers/cart'
@@ -79,5 +78,5 @@ ReactDOM.render(<App ref={app => document.addEventListener("turbolinks:load", ()
 })} />, document.getElementById('scripts'))
 
 
-
+const Turbolinks = require('turbolinks')
 Turbolinks.start()

@@ -11,6 +11,7 @@
   "author": "Phillip Malboeuf <phil@phils.computer>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^11.9.6",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.2",
     "cssnano": "^4.1.4",

@@ -7,7 +7,7 @@
 
 {% paginate collection.products by limit %}
 
-<div data-section-id="{{ section.id }}" data-section-type="collection-template">
+<div class="padded" data-section-id="{{ section.id }}" data-section-type="collection-template">
   
   <h1 class="h1--massive text_center">
     {{collection.title}}
@@ -17,7 +17,7 @@
     {% if section.settings.layout == 'grid' %}
     {% case section.settings.grid %}
     {% when 2 %}
-      {%- assign col = 'col--6of12 col--tablet_portrait--12of12' -%}
+      {%- assign col = 'col--6of12 col--phone--12of12' -%}
     {% when 3 %}
       {%- assign col = 'col--4of12 col--tablet_portrait--6of12 col--phone--12of12' -%}
     {% when 4 %}

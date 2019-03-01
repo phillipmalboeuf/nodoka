@@ -13,7 +13,7 @@
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
-  z-index: 400;
+  z-index: 20;
 
   &.overlay--cart {
     font-size: $small_size;
@@ -24,6 +24,10 @@
     width: 90vw;
     max-width: 330px;
     max-height: 90vh;
+
+    @media #{$phone} {
+      right: $rythm/2;
+    }
   }
 }
 

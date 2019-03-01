@@ -8,11 +8,19 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
-  pointer-events: none;
+  // pointer-events: none;
   background: fade-out($white, 0.05);
 
-  a, button, .overlay {
-    pointer-events: auto;
+  // a, button, .overlay {
+  //   pointer-events: auto;
+  // }
+
+  @media #{$tablet_portrait} {
+    padding: $rythm/1.5 $rythm;
+  }
+
+  @media #{$phone} {
+    padding: $rythm/1.5 $rythm/1.5;
   }
 }
 
@@ -20,5 +28,13 @@ header {
 
     &.header__link--focus {
       font-weight: 500;
+    }
+  }
+
+  .header__logo svg {
+
+    @media #{$tablet_portrait} {
+      width: (213/1.5/$base) * 1rem;
+      height: (31/1.5/$base) * 1rem;
     }
   }

@@ -60,7 +60,13 @@ h1 {
 
   &.h1--giant {
     font-size: $giant_size;
-    line-height: $rythm*4.5;
+    line-height: $rythm*3;
+
+    @media #{$phone} {
+      font-size: $big_size;
+      line-height: $rythm*2;
+      margin-bottom: $rythm;
+    }
   }
 
   &.h1--massive {
@@ -69,7 +75,13 @@ h1 {
 
     @media #{$tablet_portrait} {
       font-size: $giant_size;
-      line-height: $rythm*4.5;
+      line-height: $rythm*3;
+    }
+
+    @media #{$phone} {
+      font-size: $big_size;
+      line-height: $rythm*2;
+      margin-bottom: $rythm;
     }
   }
 }
@@ -81,11 +93,11 @@ h2 {
 
   &.h2--giant {
     font-size: $giant_size;
-    line-height: $rythm*4.5;
+    line-height: $rythm*3;
 
     @media #{$tablet_portrait} {
       font-size: $big_size;
-      line-height: $rythm*3.5;
+      line-height: $rythm*2;
     }
   }
 }

@@ -98,8 +98,12 @@ button {
   }
 
   &.button--full {
-    // padding-right: 0;
-    // padding-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  &.button--corner {
     padding-top: $rythm/1.5;
     width: 100%;
     text-align: left;

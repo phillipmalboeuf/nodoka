@@ -2,14 +2,28 @@
 
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
   <header role="banner" class="grid grid--spaced grid--middle">
-    <nav class="col col--4of12 grid grid--guttered">
+    <nav class="col col--5of12 grid grid--guttered hide_on_tablet_landscape">
       {% for link in linklists[section.settings.main_linklist].links %}
       <div class="col"><a href="{{ link.url }}" class="header__link{% if link.active %} header__link--focus{% endif %}">{{link.title}}</a></div>
       {% endfor %}
     </nav>
-    <a href="/"><h1>{% include 'svg-logo' %}</h1></a>
-    <div class="col col--4of12 grid grid--guttered grid--right">
-      <div class="col"><a href="/" class="header__link header__link--focus">EN</a> / <a href="/" class="nav__link">JP</a></div>
+    <div class="col col--4of12 col--tablet_portrait--2of12 tablet_landscape_only">
+      <details class="menu">
+        <summary>
+          {% include 'svg-menu' %}
+        </summary>
+
+        <div class="menu__container grid grid--vertically_spaced">
+          <h3 class="menu__item flat_bottom">Menu</h3>
+          {% for link in linklists[section.settings.main_linklist].links %}
+          <a href="{{ link.url }}" class="menu__item{% if link.active %} menu__item--focus{% endif %}">{{link.title}}</a>
+          {% endfor %}
+        </div>
+      </details>
+    </div>
+    <a href="/"><h1 class="header__logo">{% include 'svg-logo' %}</h1></a>
+    <div class="col col--5of12 col--tablet_portrait--3of12 grid grid--guttered grid--right">
+      <div class="col hide_on_tablet_portrait"><a href="/" class="header__link header__link--focus">EN</a> / <a href="/" class="nav__link">JP</a></div>
       <div class="col" id="cart" data-cart='{{ cart | json }}' data-turbolinks-permanent>
         {% comment %} <a href="/cart" class="header__link{% if cart.item_count > 0 %} header__link--focus{% endif %}">Your Cart ({{ cart.total_price | money }})</a> {% endcomment %}
       </div>

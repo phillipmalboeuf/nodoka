@@ -8,6 +8,7 @@
 html {
   // overflow-x: hidden;
   padding-bottom: 0 !important;
+  -webkit-tap-highlight-color: fade-out($color: $green, $amount: 0.8);
 
   &.noscroll {
     overflow: hidden;
@@ -30,7 +31,11 @@ main {
   padding: $rythm*6 $rythm*2 $rythm*2;
 
   @media #{$tablet_portrait} {
-    padding: $rythm;
+    padding: $rythm*6 $rythm $rythm*2;
+  }
+
+  @media #{$phone} {
+    padding: $rythm*4 0 $rythm*2;
   }
 }
 
@@ -54,7 +59,7 @@ main {
   padding: $gutter;
 
   @media #{$phone} {
-    padding: $gutter $gutter/2;
+    padding: $gutter $gutter/3;
   }
 
   &.padded--tight {
@@ -71,8 +76,8 @@ main {
 }
 
 .full_height { height: 100vh !important; }
-.big_bottom { margin-bottom: $rythm*4; }
-.medium_bottom { margin-bottom: $rythm*2; }
+.big_bottom { margin-bottom: $rythm*4; @media #{$phone} { margin-bottom: $rythm*2 } }
+.medium_bottom { margin-bottom: $rythm*2; @media #{$phone} { margin-bottom: $rythm*1.5 } }
 .normal_bottom { margin-bottom: $rythm; }
 .small_bottom { margin-bottom: $rythm/2; }
 .flat_bottom { margin-bottom: 0 !important; }
@@ -80,7 +85,7 @@ main {
 .flat_top { margin-top: 0 !important; }
 .small_top { margin-top: $rythm/2; }
 .normal_top { margin-top: $rythm; }
-.medium_top { margin-top: $rythm*2; }
+.medium_top { margin-top: $rythm*2; @media #{$phone} { margin-top: $rythm*1.5 } }
 .overflow_top {margin-top: -$rythm*2; }
 
 .spaced {

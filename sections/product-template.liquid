@@ -1,4 +1,4 @@
-<article
+<article class="padded"
   id="ProductSection-{{ section.id }}"
   data-section-id="{{ section.id }}"
   data-section-type="product"
@@ -15,17 +15,17 @@
 
   {% case section.settings.image_size %}
     {% when 'small' %}
-      {%- assign product_image_width = 'col--4of12' -%}
-      {%- assign product_description_width = 'col--5of12' -%}
+      {%- assign product_image_width = 'col--4of12 col--tablet_portrait--10of12 col--phone--12of12' -%}
+      {%- assign product_description_width = 'col--5of12 col--tablet--portrait--8of12 col--phone--12of12' -%}
     {% when 'medium' %}
-      {%- assign product_image_width = 'col--5of12' -%}
-      {%- assign product_description_width = 'col--4of12' -%}
+      {%- assign product_image_width = 'col--5of12 col--tablet_portrait--10of12 col--phone--12of12' -%}
+      {%- assign product_description_width = 'col--4of12 col--tablet--portrait--8of12 col--phone--12of12' -%}
     {% when 'large' %}
-      {%- assign product_image_width = 'col--7of12' -%}
-      {%- assign product_description_width = 'col--4of12' -%}
+      {%- assign product_image_width = 'col--7of12 col--tablet_portrait--10of12 col--phone--12of12' -%}
+      {%- assign product_description_width = 'col--4of12 col--tablet--portrait--8of12 col--phone--12of12' -%}
     {% when 'full' %}
-      {%- assign product_image_width = 'col--9of12' -%}
-      {%- assign product_description_width = 'col--6of12' -%}
+      {%- assign product_image_width = 'col--9of12 col--tablet_portrait--10of12 col--phone--12of12' -%}
+      {%- assign product_description_width = 'col--6of12 col--tablet--portrait--8of12 col--phone--12of12' -%}
   {% endcase %}
 
   <div class="grid grid--center grid--thick_guttered">

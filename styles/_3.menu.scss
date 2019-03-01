@@ -1,0 +1,56 @@
+
+// #menu
+
+.menu {
+
+  summary {
+    cursor: pointer;
+    position: relative;
+    z-index: 31;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &[open] {
+    summary {
+      color: $white;
+    }
+  }
+}
+
+  .menu__container {
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 20vh 0;
+    background: $black;
+
+    transition: transform $slow;
+    transform: translateY(-100%);
+
+    [open] & {
+      transition: transform $slow;
+      transform: translateY(0);
+    }
+
+    @media #{$phone} {
+      padding: 15vh 0;
+    }
+  }
+
+    .menu__item {
+      display: inline-block;
+      width: 100%;
+
+      color: $white;
+      text-align: center;
+    }
+
+    a.menu__item {
+      font-size: $big_size;
+    }
