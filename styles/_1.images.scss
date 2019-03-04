@@ -9,6 +9,10 @@ svg {
   &.img--full {
     width: 100%;
   }
+
+  .content & {
+    margin: 0 auto;
+  }
 }
 
 figure {

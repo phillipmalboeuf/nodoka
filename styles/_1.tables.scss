@@ -14,41 +14,33 @@ table {
   width: 100%;
   overflow: visible;
   border-collapse: collapse;
+  margin: $rythm 0;
 
   tr {
-    border-bottom: 1px solid $grey;
-
-    &:first-child {
-      font-weight: bold;
-      border-top: 2px solid $grey;
-    }
-
-    &:last-child {
-      border-width: 2px;
-    }
-
-    &.tr--updated {
-      background-color: fade-out($blue, 0.8);
-    }
+    
   }
 
   th {
-    text-align: left;
+
   }
 
   td {
-    min-width: 12em;
-    max-width: 12em;
-    overflow: visible;
-    position: relative;
+    width: 50%;
+    padding: 0 $gutter $gutter;
+    vertical-align: top;
 
-    &.td--updated {
-      background-color: fade-out($blue, 0.8);
+    @media #{$phone} {
+      display: block;
+      width: 100%;
+      padding: 0 0 $gutter;
     }
   }
 
-    .th--pinned,
-    .td--pinned {
-
+  table td {
+    @media #{$tablet_portrait} {
+      display: block;
+      width: 100%;
+      padding: 0 0 $gutter;
     }
+  }
 }

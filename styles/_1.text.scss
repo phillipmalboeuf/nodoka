@@ -50,6 +50,14 @@ h1, h2, h3, h4, h5, h6 {
   &:last-child {
     margin-bottom: 0;
   }
+
+  .content & em {
+    font-size: $base_size;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    vertical-align: middle;
+  }
 }
 
 h1 {
