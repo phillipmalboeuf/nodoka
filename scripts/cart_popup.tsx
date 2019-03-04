@@ -56,7 +56,7 @@ export class CartPopup extends Overlay {
               </React.Fragment>)}
             </div>
             <div className='small_bottom' />
-            <a href='/checkout' className='button button--full'>Proceed to checkout</a>
+            <a href='/checkout' className='button button--full'  data-turbolinks='false'>Proceed to checkout</a>
           </div>
         </div>
         : null}
